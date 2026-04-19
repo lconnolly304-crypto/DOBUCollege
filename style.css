@@ -1,0 +1,1432 @@
+
+/* Global Css */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100vh;
+    margin: 0;
+    background-color: white;
+}
+
+/* Navbar Section */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding:  22px 22px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    flex: 1;
+}
+
+.navbar-links{
+    list-style: none;
+    display: flex;
+    gap: 22px;
+    margin: 0;
+    padding: 0;
+    flex: 2;
+    justify-content: center;
+}
+
+.profile-link i {
+    font-size: 28px;
+}
+
+.navbar-links a, .profile-link {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: 0.4s;
+}
+
+.navbar-links a:hover, .profile-link:hover {
+    color: lightgrey;
+}
+
+.user-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.welcome-message {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
+
+.login-button {
+    background-color: #333;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+.login-button {
+    background-color:  lightgrey;
+}
+
+.navbar-links a.active {
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+}
+
+@media (max-width: 1000px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 15px 25px;
+    }
+
+    .logo {
+        order: 1;
+        flex: 1;
+    }
+
+    .user-links {
+        order: 2;
+        flex: unset;
+    }
+
+    .navbar-links {
+        order: 3;
+        width: 100%;
+        margin-top: 16px;
+        flex: unset;
+        gap: 22px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .logo {
+        order: 1;
+        text-align: center;
+        flex: unset;
+    }
+
+    .navbar-links {
+        order: 2;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 0;
+    }
+
+    .user-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .navbar-links a {
+        font-size: 18px;
+    }
+}
+
+/* Footer Section */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 25px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer-top{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    margin-top: 2px;
+    margin-bottom: 12px;
+}
+
+.footer-logo {
+    justify-self: start;
+}
+
+.footer-logo h2 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.footer-links {
+    grid-column: 2;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 0;
+}
+
+.footer-links a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.footer-links a:hover{
+    opacity: 0.7;
+}
+
+.footer-divider {
+    border: 1px solid white;
+    margin: 20px;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 12px;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 32px;
+    font-weight: bold;
+    transition:  color 0.2s;
+}
+
+.social-links a:hover {
+    color: rgb(196, 181, 181);
+}
+
+/* Footer Media Querys */
+@media(max-width: 600px) {
+    .footer-top{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .footer-logo {
+        position: static;
+    }
+}
+
+
+/* Login / Signup / Contact container and form */
+.site-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.details-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    padding-top: 26px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow:  0 4px 10px rgba(0,0,0,0.1);
+    width: 45%;
+    max-width: 80%;
+}
+
+.login-form label {
+    display: block;
+    width: 85%;
+    text-align: left;
+    font-weight: bold;
+    text-transform: bold;
+    font-size: 16px;
+    margin-bottom: 8px;
+    margin-top: 18px;
+}
+
+.login-form input {
+    width: 85%;
+    padding: 14px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    margin-bottom: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: black;
+    box-shadow: 2px rgba(0,0,0,0.1);
+}
+
+.login-form a:hover{
+    color: black;
+    text-decoration: none;
+}
+
+.login-form a {
+    text-decoration: none;
+    color: #444;
+    font-size: 16px;
+    margin-top: 16px;
+    transition: color 0.3s;
+}
+
+.login-form h2 {
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 54px;
+    letter-spacing: 1.7px;
+}
+
+.login-button{
+    width: 75%;
+    padding: 12px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px; 
+    margin-top: 36px;
+}
+
+.login-button :hover{
+    background-color: black;
+}
+
+/* Info Container  */
+
+.info-container {
+    margin: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    color: black;
+    width: 60%;
+    border-radius: 8px;
+    height: 70%;
+    margin-top: 14px;
+    box-shadow:  0 4px 10px rgba(0,0,0,0.4);
+}
+
+.info-container h1 {
+    margin: 15px;
+    text-align: center;
+    font-size: 56px;
+}
+
+.info-container p {
+    margin: 7px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.info-container a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Css Grid layout for account page and cards */
+.account-management-page {
+    width: 100%;
+    max-width: 1450px;
+    margin: 25px auto;
+    padding: 0 25px;
+    box-sizing: border-box;
+}
+
+.account-title {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: center;
+    border-bottom: 2px solid  #eee;
+    padding-bottom: 16px;
+}
+
+.account-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.settings-column{ 
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.card h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 12px;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+.account-divider {
+    border: 0;
+    height: 1px;
+    background-color: #eee;
+    margin: 20px 0;
+}
+
+.profile-large-icon {
+    font-size: 65px;
+    margin-bottom: 16px;
+    color: #555;
+}
+
+.profile-card h3 {
+    margin: 0;
+    font-size: 22px;
+    margin-bottom: 16px;
+}
+
+.profile-email-text {
+    color: #eee;
+    margin: 0;
+}
+
+.user-details {
+    text-align: left;
+    padding: 22px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.user-details p {
+    margin: 10px;
+    font-size: 16px;
+    color: darkgrey;
+}
+
+.user-details strong {
+    color: #333;
+    display: inline-block;
+    width: 85px;
+}
+
+.password-form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+.input-section {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 22px;
+}
+
+.input-section label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: bold;
+}
+
+.input-section input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.input-section input:focus {
+    outline: none;
+    border-color: #333;
+}
+
+.password-form button {
+    width: 100%;
+    padding: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin: 12px;
+    transition: background-color 0.3sx ease;
+}
+
+.password-form button:hover {
+    background-color:  #444;
+    color: white;
+}
+
+.toggle-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle-container p {
+    color: darkgrey;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.switch-toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 25px;
+}
+
+.switch-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 36px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #333;
+}
+
+input:checked + .slider::before{
+    transform: translateX(22px);
+}
+
+@media (max-width: 768px) {
+    .account-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Acoount page light / dark mode */
+html.dark-mode {
+    filter: invert(1) hue-rotate(180deg);
+    background-color: white;
+}
+
+html.dark-mode img {
+    filter: invert(1) hue-rotate(180deg) !important;
+}
+
+html.dark-mode .top-section {
+    filter: invert(1) hue-rotate(180deg) !important;
+}
+
+
+
+/* Contact Us form section */
+.contact-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.contact-us-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 45px;
+    border-radius: 10px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+}
+
+.contact-us-form h2 {
+    font-size: 32px;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 25px;
+    letter-spacing: 1.7px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.contact-title {
+    font-size: 18px;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.contact-us-form label {
+    display: block;
+    margin-bottom: 6px;
+    margin-top: 16px;
+    width: 100%;
+    text-align: left;
+    color: #333;
+    font-weight: bold;
+}
+
+.contact-us-form input {
+    width: 82%;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 6px;
+    margin-bottom: 4px;
+}
+
+.contact-us-form input, 
+.contact-us-form textarea,
+#message {
+    width: 100%;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+
+.contact-us-form textarea:focus, 
+.contact-us-form textarea:focus{
+    outline: none;
+    border-color: #333;
+}
+
+.contact-us-form a {
+    text-decoration: none;
+    color: black;
+}
+
+.name-row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    margin: auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.name-row .form-group input {
+    flex: 1;
+}
+
+#message {
+    resize: none;
+}
+
+.contact-us-button{
+    width: 60%;
+    padding: 12px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-top: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-us-button:hover {
+    background-color: #444;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .name-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .contact-us-form {
+        padding: 30px 20px;
+    }
+}
+
+/* Accessability Page */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.toggle-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+    text-transform: uppercase;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 54px !important;
+    height: 26px;
+    flex-shrink: 0;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.contrast-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.contrast-slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 5px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .contrast-slider{
+    background-color: #333;
+}
+
+input:checked + .contrast-slider::before{
+    transform: translate(24px);
+}
+  
+.accessability-button {
+    width: 85%;
+    padding: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 32px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.accessability-button:hover {
+    background-color: #444;
+}
+
+.details-container .contact-us-form label {
+    text-align: center;
+}
+
+/* Accessability High Contrast Mode */
+
+html.high-contrast,
+html.high-contrast * {
+    background-color:  #000000 !important;
+    color: #ffffff !important;
+}
+
+html.high-contrast * {
+    border-color: #ffffff !important;
+}
+
+html.high-contrast a,
+html.html.high-contrast button {
+    color: #ffff00 !important;
+    border: 1px solid grey;
+}
+
+html.high-contrast .contrast-slider {
+    background-color: #444;
+    border: 1px solid grey;
+}
+
+/* Index / Home Page */
+.top-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(assets/karate_image_1.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 65vh;
+    margin-bottom: 28px;
+}
+
+.text-overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 0 25px;
+    box-sizing: border-box;
+}
+
+.text-overlay h1 {
+    color: white;
+    font-size: 62px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 14px rgba(0,0,0,0.9);
+    margin: 0 20px;
+}
+
+.side-by-side-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 1225px;
+    margin: auto;
+    background-color: #333;
+    border-bottom: 1px solid  #222;
+}
+
+.side-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(20%);
+}
+
+.side-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    background-color: #333;
+    padding: 40px 10%;
+}
+
+.side-content h2 {
+    font-size: 36px;
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.side-content p {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.bottom-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+    max-width: 1225px;
+    margin: 25px auto;
+    padding: 20px;
+}
+
+.tripple-section {
+    background-color: white;
+    padding: 42px 32px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.05);
+    border: 1px solid whitesmoke;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tripple-section:hover {
+    transform: translateY(-5px);
+    border-color: grey;
+}
+
+.tripple-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tripple-section p {
+    color:  #4d4646;
+    margin-bottom: 22px;
+    line-height: 1.7;
+}
+
+.side-button {
+    display: inline-block;
+    background-color: white;
+    color: #333;
+    padding: 14px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+    border: 1.5px solid white;
+}
+
+.side-button:hover {
+    background-color: #333;
+    color: white !important;
+}
+
+.testimonial-slideshow {
+    position: relative;
+    min-height: 120px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 25px;
+}
+
+.slide {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+    width: 100%;
+    pointer-events: none;
+}
+
+.slide.active {
+    opacity: 1;
+    position:  relative;
+    pointer-events: auto;
+}
+
+.slide strong {
+    color:  #333;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.slide p {
+    margin-bottom: 8px;
+}
+
+.slide-button {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: lightgrey;
+    cursor: pointer;
+    transition: color 0.4s ease;
+    z-index: 100;
+    padding: 12px;
+}
+
+.side-button:hover{
+    color: #333;
+}
+
+.prev-button {
+    left: 0;
+}
+
+.prev-button {
+    right: 0;
+}
+
+@media (min-width: 1600px) {
+    .side-by-side-section,
+    .bottom-section {
+        max-width: 1625px;
+    }
+}
+
+@media (max-width: 768px) {
+    .side-by-side-section {
+        grid-template-columns: 1fr;
+    }
+    .side-content {
+        padding: 35px 22px;
+        align-items: center;
+        text-align: center;
+    }
+    .top-section {
+        margin-bottom: 0;
+    }
+}
+
+/* About Us page container and cards */
+.about-page-container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 25px;
+    box-sizing: border-box;
+    margin: 40px auto;
+}
+
+.about-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    align-items: stretch;
+}
+
+.about-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 45px 50px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.about-card p {
+    color: #444;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+    max-width: 750px;
+}
+
+.page-title {
+    width: 100%;
+    font-size: 32px;
+    color: #333;
+    margin-top: 1px;
+    margin-bottom: 25px;
+    letter-spacing: 1.7px;
+    border-bottom: 2px solid #eee;
+    text-transform: uppercase;
+    padding-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+    .about-layout {
+        grid-template-columns: 1fr;
+    }
+    .about-card {
+        padding: 25px 20px;
+    }
+
+    .page-title {
+        font-size: 26px;
+    }
+    }
+
+.my-bookings-page {
+        flex: 1;
+        background-color: white;
+        padding: 60px 48px;
+        max-width: 1200px; 
+        margin: auto;
+        width: 100%;
+    }
+
+    .booking-title {
+        text-align: center;
+        font-size: 62px;
+        margin-bottom: 45px;
+        letter-spacing: 1.7px;
+        text-transform: uppercase;
+    }
+
+    .my-booking-section {
+        margin-bottom: 45px;
+    }
+
+    .my-booking-section h2 {
+        font-size: 32px;
+        margin-bottom: 32px;
+        letter-spacing: 1.7px;
+        border-left: 6px solid #333;
+        padding-left: 16px;
+    }
+
+    .bookings-side-by-side {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .my-bookings-card {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        border: 1px solid darkgrey;
+        display: grid;
+        grid-template-columns: 1fr 2fr auto;
+        align-items: center;
+        gap: 32px;
+    }
+
+    .booking-card-title {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        gap: 12px;
+    }
+
+    .booking-card-title h3 {
+        font-size: 24px;
+        margin: 0;
+        line-height: 1.7;
+    }
+
+    .status {
+        padding: 8px 12px;
+        border-radius: 22px;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1.7px;
+    }
+
+    .status.active {
+        background-color: lightgreen;
+        color: darkgreen;
+    }
+
+    .status.booked {
+        background-color: lightgrey;
+        color: #333;
+    }
+
+    .booking-card-details {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .booking-card-details p {
+        margin-bottom: 0;
+        font-size: 18px;
+        color: #444;
+    }
+
+    .booking-card-details strong {
+        color: black;
+    }
+
+    .cancel-button {
+        margin-top: auto;
+        padding: 16px;
+        background-color: white;
+        color: red;
+        border: 2px solid red;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+    }
+
+    .cancel-button:hover {
+        background-color: darkred;
+        color: white;
+    }
+
+@media (max-width: 768px) {
+    * {
+        box-sizing: border-box;
+        margin: 0;
+    }
+    .booking-title {
+        font-size: 38px;
+        margin-bottom: 32px;
+        letter-spacing: 2px;
+    }
+    .my-bookings-card {
+        grid-template-columns: 1fr;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .booking-card-title {
+        width: 100%;
+        align-items: center;
+        border-bottom: 2px solid grey;
+        padding-bottom: 18px;
+    }
+
+    .booking-card-details {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    }
+
+.booking-page {
+        flex: 1;
+        padding: 60px 45px;
+        background-color: white;
+        max-width: 1200px;
+        margin: auto;
+        width: 100%;
+    }
+
+    .booking-section h2, .time-table-section h2{
+        text-align: center;
+        font-size: 38px;
+        margin-bottom: 42px;
+        letter-spacing: 1.7px;
+    }
+
+    .booking-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin-bottom: 52px;
+    }
+
+    .booking-card {
+        display: grid;
+        grid-template-columns: 2fr 1fr auto;
+        grid-template-rows: auto ;
+        column-gap: 36px;
+        row-gap: 6px;
+        background: white;
+        padding: 25px 40px;
+        border-radius: 12px;
+        box-shadow:  0 4px 16px rgba(0,0,0,0.1);
+        border: 1px solid grey;
+        text-align: center;
+        align-items: center;
+        transition: transform 0.3s ease;
+    }
+
+    .booking-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .booking-card h3 {
+        font-size: 26px;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        margin: 0;
+        align-self: end;
+    }
+
+    .booking-card .price {
+        font-size: 52px;
+        font-weight: bold;
+        margin-bottom: 22px;
+        color: black;
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+        align-self: center;
+    }
+
+    .booking-card .price span {
+        font-size: 22px;
+        color: #444;
+    }
+
+    .booking-card .description {
+        font-size: 18px;
+        color: #444;
+        line-height: 1.7;
+        margin-bottom: 32px;
+        flex-grow: 1;
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        align-self: start;
+    }
+
+    .purchase-button {
+        width: 100%;
+        padding: 18px 32px;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 22px;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: background-color 0.3s ease;
+        grid-column: 3 / 4;
+        grid-row: 1 / 3;
+    }
+
+    .purchase-button:hover {
+        background-color: black;
+    }
+
+    .time-table-container {
+        width: 100%;
+        overflow-x: auto;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        border-radius: 12px;
+        border: 1px solid #333;
+    }
+
+    .time-table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: white;
+        min-width: 1200px;
+    }
+
+    .time-table th {
+        background-color: #333;
+        color: white;
+        padding: 18px;
+        font-size: 16px;
+        letter-spacing: 1.7px;
+        text-align: center;
+    }
+
+    .time-table td {
+        padding: 16px;
+        text-align: center;
+        border-bottom: 1px solid grey;
+        border-right: 1px solid grey;
+        font-size: 16px;
+        color: #444;
+    }
+
+    .time-table td.time-column {
+        font-weight: bold;
+        background-color: white;
+        color: black;
+    }
+
+    .time-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .time-table td:last-child {
+        border-right: none;
+    }
+
+    @media (max-width: 900px) {
+        * {
+        box-sizing: border-box;
+        margin: 0;
+        }
+
+        .booking-section h2,
+        .time-table-section h2 {
+            font-size: 28px;
+            margin-bottom: 32px;
+        }
+
+        .booking-card {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            text-align: center;
+            gap: 25px;
+            padding: 25px 20px;
+        }
+
+        .booking-card h3, .booking-card .description, .booking-card .price, .purchase-button {
+            grid-column: 1 / -1;
+            grid-row: auto;
+            align-self: center;
+        }
+    }
