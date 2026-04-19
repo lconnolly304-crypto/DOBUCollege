@@ -9,7 +9,7 @@
 <body class="site-container">
  
 <?php include 'navbar.php'; ?>
-
+# fix
 <main class="about-page-container">
     <div class="about-layout">
 
