@@ -46,7 +46,7 @@ catch(PDOException) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> 
     <title>Booking Management</title>
 </head>
 <body class="site-container">
@@ -68,7 +68,7 @@ catch(PDOException) {
         <div class="bookings-side-by-side">
             <?php if (count($user_plans) > 0): ?>
                 <?php foreach ($user_plans as $plan): ?>
-
+                # load bookings from table and load with php
                 <div class="my-bookings-card">
                     <div class="booking-card-title">
                         <h3><?php echo htmlspecialchars($plan['plan_name']); ?></h3>
