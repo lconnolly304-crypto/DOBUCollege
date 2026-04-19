@@ -7,7 +7,7 @@
     <title>AboutUs</title>
 </head>
 <body class="site-container">
-
+ 
 <?php include 'navbar.php'; ?>
 
 <main class="about-page-container">
