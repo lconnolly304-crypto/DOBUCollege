@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/lukec/public_html/DOBUCollege/
+    - /bin/cp -R * $DEPLOYPATH
